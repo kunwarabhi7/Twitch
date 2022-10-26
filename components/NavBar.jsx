@@ -1,6 +1,7 @@
 import { BsTwitch} from 'react-icons/bs'
 import {FiSearch, FiUser} from 'react-icons/fi'
 import HeadlessUI from './HeadlessUI'
+import Link from 'next/link'
 const NavBar = () => {
   return (
     <div className='flex fixed justify-between w-full h-[50px] p-1 bg-black shadow-md'>
@@ -20,9 +21,14 @@ const NavBar = () => {
          </div>
          {/* Right  */}
           <div className=' h-[50px] w-[181px] flex  justify-between'>
+<Link href='/account'>
 
           <button className='cursor-pointer bg-gray-300    hover:bg-gray-400 h-[30px] w-[58px]'>Login</button>
+</Link>
+<Link href='/account'>
+
           <button className='cursor-pointer h-[30px] w-[68px] hover:bg-[#772ce8] bg-[#5c16c5] text-gray-200'>SignUp</button>
+</Link>
           <button className='w-[30px] h-[30px]'><FiUser size={25} /></button>
           </div>
           {/* Mobile  */}
