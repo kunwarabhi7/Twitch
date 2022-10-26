@@ -2,9 +2,9 @@ import {BsThreeDotsVertical, BsTwitch} from 'react-icons/bs'
 import {FiSearch, FiUser} from 'react-icons/fi'
 const NavBar = () => {
   return (
-    <div className='flex justify-between w-full h-[50px] p-1 shadow-md'>
+    <div className='flex fixed justify-between w-full h-[50px] p-1 bg-black shadow-md'>
       <div className='flex h-[50px] w-[320px]'>
-        <div className='justify-between h-[50px] w-[50px]'><BsTwitch className='text-[#5C16C5]' size={30} /></div>
+        <div className='justify-between h-[50px] w-[50px]'><BsTwitch className='bg-[#5C16C5]' size={30} /></div>
         <div className='h-[48px] w-[61px]'>
           <h1 className='font-bold hover:text-[#5c16c5] cursor-pointer'>Browse</h1></div>
         <div className='h-[50px] w-[50px] cursor-pointer'><BsThreeDotsVertical className='h-[20px] w-[20px]' /> </div>
