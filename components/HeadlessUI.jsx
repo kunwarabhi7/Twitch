@@ -2,12 +2,7 @@ import { Menu ,Transition} from '@headlessui/react'
 import { Fragment } from 'react'
 import {BsThreeDotsVertical} from 'react-icons/bs'
 
-const links = [
-    { href: '/account-settings', label: 'Account settings' },
-    { href: '/support', label: 'Support' },
-    { href: '/license', label: 'License' },
-    { href: '/sign-out', label: 'Sign out' },
-  ]
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
   }
