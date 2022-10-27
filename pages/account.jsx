@@ -1,21 +1,43 @@
-import { useSession, signIn, signOut } from "next-auth/react"
-export default function Component() {
-  const { data: session } = useSession()
+import React from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { FcGoogle } from 'react-icons/fc';
+import Image from 'next/image';
+
+const Account = () => {
+  const { data: session } = useSession();
+  console.log(session);
   if (session) {
-    console.log(session)
     return (
-      <div className="w-full h-24 bg-black text-white">
-<p className=" text-xl w-48 h-12 pt-36 text-white ml-[580px] ">        Signed in as {session.user.email} </p>
-<p className=" text-xl w-48 h-12 pt-36 text-white ml-[580px] ">        Welcome Mr. {session.user.name} </p>
-<img src={session.user.name} alt="/" className="rounded-full h-10 w-16" />
-        <button className="bg-blue w-48 h-12 text-4xl text-green-700 pt-40 ml-[580px]" onClick={() => signOut()}>Sign out</button>
+      <div className='pt-[100px] flex flex-col max-w-[400px] w-full mx-auto p-4 bg-black h-full'>
+        <h2 className='text-2xl font-bold'>Welcome, {session.user.name}</h2>
+        <p className='py-4'>Signed in as {session.user.email}</p>
+        <div className='pb-4 m-auto'>
+          <Image
+            src={session.user.image}
+            className='rounded-full'
+            alt='/'
+            width='100'
+            height='100'
+          />
+        </div>
+        <button className='flex items-center justify-center p-3 bg-gray-600 border border-gray-600' onClick={() => signOut()}>Sign out</button>
       </div>
-    )
+    );
   }
   return (
-    <div className="w-full h-24 bg-black text-white">
-      <p className=" text-8xl w-[900px] h-12 pt-36 text-white ml-[420px] "> Not signed in ? </p>
-      <button className="bg-blue w-96 h-12 text-7xl text-green-700 pt-40 ml-[500px]" onClick={() => signIn()}>Sign in</button>
+    <div className='pt-[100px] flex flex-col max-w-[400px] w-full mx-auto p-4 bg-black h-screen'>
+      <h2 className='text-3xl font-bold'>Login</h2>
+      <p className='py-4'>Choose the account you want to sign in with.</p>
+      
+      <button
+        className='flex items-center justify-center p-3 bg-blue-600 border border-blue-600 my-2'
+        onClick={() => signIn()}
+      >
+        <FcGoogle className='mr-2' />
+        Sign in with<span className='font-bold pl-1'>Google</span>
+      </button>
     </div>
-  )
-}
+  );
+};
+
+export default Account;
