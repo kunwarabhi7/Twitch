@@ -36,14 +36,14 @@ const NavBar = () => {
          </div>
          {/* Right  */}
          
-          <div className=' h-[50px] w-[181px] flex  justify-between'>
+          <div className=' h-[50px] w-[300px] flex  justify-evenly'>
             {session ? (
                <div className='flex items-center'>
                <Link href='/account'>
-                 <div>
-                   <p className='pr-4 cursor-pointer'>
+                 <div className='flex'>
+                   <p className='pr-4 cursor-pointer '>
                      Welcome, {session.user.name}
-                   </p>
+                   </p>                    
                  </div>
                </Link>
                <Menu as='div' className='relative text-left'>
